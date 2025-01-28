@@ -1,0 +1,261 @@
+:root {
+  /* Red Hat Color pallete */
+  --gray-90: #1f1f1f;
+  --gray-95: #151515;
+  --red-60: #a60000;
+  --red-70: #5f0000;
+  --white: #ffffff; 
+}
+
+.openai-container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80vw;
+  height: 100vh;
+  transition: width 0.5s ease;
+}
+.openai-container.collapsed {
+  width: 100vw;
+}
+
+.App.dark-mode .openai-container {
+  background-color: #3F3e48;
+}
+
+.top {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 70vw;
+  white-space: nowrap;
+}
+
+.powered {
+  color: gray;
+  font-style: italic;
+  font-size: 11px;
+  padding-top: 25px;
+  margin-left: auto;
+}
+.title {
+  color: black;
+}
+.App.dark-mode .title,
+.App.dark-mode .top {
+  color: white;
+}
+
+.bottom {
+  color: gray;
+  font-size: 12px;
+  padding:0;
+  margin:5;
+}
+
+.App.dark-mode .bottom {
+  color: white;
+}
+
+.input-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Horizontally align items */
+  width: 70vw;
+  margin-top: 20px;
+  
+}
+
+.text-box-container {
+  position: relative; /* Make the container relative */
+  width: 55vw;
+}
+
+.text-box {
+  color: black;
+  box-sizing: border-box;
+  padding: 18px 80px 18px 18px; /* Adjust padding to accommodate the button */
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  border-radius: 15px;
+  height: 55px;
+  width: 55vw;
+}
+
+.send-button {
+  position: absolute; /* Position the button absolutely */
+  top: 50%; /* Vertically center the button */
+  right: 0; /* Adjust the distance from the right */
+  transform: translateY(-50%); /* Center vertically */
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.send-button img {
+  width: 25px; /* Adjust width as needed */
+  height: 25px; /* Adjust height as needed */
+}
+
+.App.dark-mode .text-box {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.text-box::placeholder {
+  color: gray;
+  font-size: 15px;
+}
+
+.text-box:focus::placeholder {
+  color: transparent;
+}
+
+.App.dark-mode .text-box::placeholder {
+  color: black;
+}
+
+.send-button:hover {
+  cursor: pointer;
+}
+
+/* Chat message styles */
+.message {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+  word-wrap: break-word;
+  animation: slideIn 0.75s ease-out forwards;
+}
+
+.messages-container {
+  width: 60vw;
+  height: 100vh; /* Match the openai-container height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  flex-direction: column-reverse;
+  padding-top: 50px;
+}
+
+/* Custom scrollbar for .messages-container */
+.messages-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar */
+  scrollbar-width: none; /* Hide the scrollbar by default */
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover color */
+}
+
+/* Show scrollbar when content is scrollable */
+.messages-container:hover::-webkit-scrollbar {
+  scrollbar-width: auto; /* Show the scrollbar on hover */
+}
+
+.message.user {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  display: inline-flex;
+  float: right;
+  text-align: right;
+  max-width: 30vw;
+  margin: 2.5vh 0px 2.5vh 30vw;
+}
+
+.App.dark-mode .message.user {
+  background-color: red;
+  color: white;
+}
+
+.message.ai {
+  background-color: var(--gray-90);
+  color: white;
+  border-radius: 15px;
+  float: left;
+  text-align: left;
+  max-width: 50vw;
+  max-height: fit-content;
+  margin: 0px 30vw 0px 0px;
+}
+.App.dark-mode .message.ai {
+  background-color: white;
+}
+
+/* AI messages will render as paragraph with react-markdown*/
+.message.ai h1,
+.message.ai h2,
+.message.ai p,
+.message.ai code,
+.message.ai li {
+  color: white;
+}
+.message.ai a {
+  color: lightblue;
+  text-decoration: underline;
+}
+.App.dark-mode .message.ai a {
+  color: blue;
+}
+
+.App.dark-mode .message.ai h1,
+.App.dark-mode .message.ai h2,
+.App.dark-mode .message.ai p,
+.App.dark-mode .message.ai code,
+.App.dark-mode .message.ai li {
+  color: black;
+}
+
+/* Message animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-image {
+  height: 50vh;
+  width: 50vw;
+  margin-left: 5vw;
+}
+
+
+#modelSelector {
+  font-size: 12px;
+  border-radius: 50px;
+  border-color: var(--red-60);
+  background-color: transparent;
+  color: gray;
+  margin-left: 5px;
+  font-style: italic;
+}
+.App.dark-mode #modelSelector {
+  color: white;
+}
+
+#modelSelector option {
+  background-color: #fff;
+  color: gray;
+}
+.App.dark-mode #modelSelector option {
+  color: white;
+  background-color: #3F3e48;
+}
+#modelSelector:focus {
+  outline: none;
+  border-color: var(--red-60);
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}

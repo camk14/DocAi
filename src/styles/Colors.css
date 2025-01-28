@@ -1,0 +1,31 @@
+:root {
+    /* DocAI Color Palette */
+
+    /* Light Mode */
+    /* Task Bar */    
+    --taskBarBackground: #0e131b;
+    --taskBarText: #302f37;
+    --taskBarBubble: #202832;
+    --taskBarBubbleHover: #728597;
+    /* Chat Bot */
+    --chatBotBackground: #302f37;
+    --chatBotBubble: #84828f;
+    --chatBotBubbleMessage: #d9d9d9;
+    --chatBotSentMessageBubble: #302f37;
+    --chatBotRespondMessageBubble: #84828f;
+    --chatBotBubbleText: #d9d9d9;
+
+    /* Dark Mode */
+    /* Task Bar */    
+    --darkTaskBarBackground: #0e131b;
+    --darkTaskBarText: #302f37;
+    --darkTaskBarBubble: #202832;
+    --darkTaskBarBubbleHover: #728597;
+    /* Chat Bot */
+    --darkChatBotBackground: #302f37;
+    --darkChatBotBubble: #84828f;
+    --darkChatBotBubbleMessage: #d9d9d9;
+    --darkChatBotSentMessageBubble: #302f37;
+    --darkChatBotRespondMessageBubble: #84828f;
+    --darkChatBotBubbleText: #d9d9d9;
+  }

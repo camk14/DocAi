@@ -1,0 +1,16 @@
+/* Upload.css */
+ 
+
+.uploadButton {
+    height: auto;
+    display: inline-block;
+    padding: 10ox 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+  

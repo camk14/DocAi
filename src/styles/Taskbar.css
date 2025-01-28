@@ -1,0 +1,170 @@
+/* Taskbar.css */
+
+.taskbar {
+  margin: auto;
+  background-color: #f9f9f9;
+  padding-left: 10px;
+  height: 100vh;
+  width: 20vw;
+  transition: width 0.5s ease, display 0s 0.5s;
+}
+.taskbar.collapsed {
+  width: 65px;  
+}
+
+.App.dark-mode .taskbar {
+  background-color: #1d1d1d;
+}
+
+h3 {
+  color: black;
+}
+.App.dark-mode h3 {
+  color: white;
+}
+
+.myFiles{
+  color: black;
+}
+.App.dark-mode .myFiles {
+  color: white;
+}
+.collapsed .myFiles {
+  display: none;
+}
+
+.welcome-message {
+  color: var(--text-black);
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: underline;
+  
+}
+.sign-in {
+  text-align: center; 
+  color: var(--text-black);
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.App.dark-mode .welcome-message,
+.App.dark-mode .sign-in {
+  color: white; 
+}
+
+.dark-mode h2 {
+  color: white;
+}
+
+.dark-mode .taskbar {
+  background-color: var(--darkgray);
+}
+
+.fileList {
+  list-style-type: none;
+  color: black;
+  padding: 0;
+}
+.collapsed .fileList {
+  display: none;
+}
+
+.fileList li {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: #d3d3d3;
+  border-radius: 50px;
+  height: 50px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.fileList input {
+  border-radius: 50px;
+  height: 50px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: none;
+}
+
+.fileList label {
+  cursor: pointer; /* Changes cursor to pointer when hovering over the label */
+}
+
+.fileList .selected {
+  background-color: red;
+  color: white;
+  border-radius: 50px;
+}
+
+.fileListWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  height: fit-content;
+}
+
+.actions {
+  height: auto;
+  position: absolute;
+  height: fit-content;
+  width: 20vw;
+  bottom: 15px;
+}
+
+.actions img {
+  width: 50px;
+  height: 50px;
+}
+
+.collapsed button:nth-child(1) img {
+  display: none;
+}
+
+.actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px; 
+  height: 50px;
+  position: relative;
+  padding: 0;
+}
+
+.actions button .hover-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 15px);
+  white-space: nowrap;
+  color: black;
+  font-size: 17.5px;
+}
+
+.App.dark-mode .actions .hover-text {
+  color: white;
+}
+
+.actions button:hover .hover-text {
+  display: inline;
+  transform: translateY(-50%) translateX(0);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid black;
+  width: calc(100% - 10px);
+  margin: 10px 0;
+  transition: width 0.5s ease;
+}
+.App.dark-mode .divider {
+  border-top: 1px solid white;
+}
+.collapsed .divider {
+  width: 50px;
+}
