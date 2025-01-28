@@ -35,7 +35,7 @@ To run the project locally utilizing the Ollama API, follow these setup instruct
 
 1. Clone the repository to your local machine:
    ```sh 
-   git clone https://github.com/GraysonHackett/DocAI
+   git clone https://github.com/camk14/DocAi
    ```
 2. Update all dependencies with terminal command: 
    ```sh
